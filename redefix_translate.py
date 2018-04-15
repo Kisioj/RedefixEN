@@ -150,6 +150,15 @@ DE_2_EN = {
     ): (
         'When you start the program for the first time, you can ignore this message.'
     ),
+    (
+        '@Zeigt die doppelten OU-EintrĂ¤ge an.\r\n'
+        'Ein Klick aif ein Element kopiert den Namen des Elementes in die Zwischenablage.\r\n'
+        'Ein Doppelklick Ă¶ffnet zusĂ¤tzlich alle Script-Dateien, in dem das Element vorkommt.'
+    ): (
+        '@Displays the duplicate OU entries.\r\n'
+        'One click on an item copies the name of the item to the clipboard.\r\n'
+        'A double-click additionally opens all script files in which the element occurs.'
+    ),
     'Bitte den Gothic-Ordner auswählen': 'Please select the gothic folder',
     'CSL und BIN': 'CSL and BIN',
     'Bestimmt, ob ein Hotkey verwendet werden soll': 'Determines if a hotkey should be used.',
@@ -166,6 +175,8 @@ DE_2_EN = {
     '#Untertitel: ': '# Subtitles: ',
     '#Zeit: ': '#Time: ',
     '#erwartet': '#expected',
+    'Der Pfad zum Stumm-Ordner ist ungültig!': 'The path to the mute folder is invalid!',
+    'Der Pfad zum Speech-Ordner ist ungültig!': 'The path to the Speech folder is invalid!',
 }
 
 
