@@ -163,6 +163,9 @@ DE_2_EN = {
     'Doppelt.txt': 'Duplica.txt',
     'Hier kann man den gewünschten Hotkey einstellen.': 'Here you can set the desired hotkey.',
     'Dateifehler': 'File error',
+    '#Untertitel: ': '# Subtitles: ',
+    '#Zeit: ': '#Time: ',
+    '#erwartet': '#expected',
 }
 
 
@@ -174,6 +177,9 @@ def t2h(text):
 def text_2_redefix_bytes(text, encoding='windows-1250'):
     if text.startswith('@'):
         return b''.join(char.encode(encoding) for char in text[1:])
+    elif text.startswith('#'):
+        return b'\x00'.join(char.encode(encoding) for char in text[1:]) + b'\x00'
+
     return b'\x00'.join(char.encode(encoding) for char in text) + b'\x00'
 
 
@@ -195,7 +201,7 @@ def main(filename):
             start_index = content.index(original_bytes)
             end_index = start_index + len(translated_bytes)
 
-            if original_text.startswith('@') or len(original_bytes) > 255:
+            if original_text.startswith('@') or original_text.startswith('#') or len(original_bytes) > 255:
                 content[end_index] = 0
             else:
                 len_index = start_index - 1
